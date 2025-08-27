@@ -138,6 +138,22 @@
             font-size: 0.9rem;
             color: #6c757d;
         }
+
+        .sort-toggle-btn {
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 2px 8px;
+            color: #6c757d;
+        }
+        .sort-toggle-btn .bi {
+            font-size: 0.8rem;
+            transition: color 0.2s ease-in-out;
+        }
+        .sort-toggle-btn .bi.active-sort {
+            color: #000;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -148,7 +164,7 @@
             </div>
             <h5>Administrador</h5>
             <a href="dashboardADM.html" class="nav-button">Ocorrências</a>
-            <a href="#" class="nav-button">Relatórios</a>
+            <a href="relatorios.html" class="nav-button">Relatórios</a>
 
             <div class="sidebar-footer">
                 <a href="../LoginAdmin/loginADM.html" id="logoutBtn" class="logout-button">
@@ -193,6 +209,14 @@
                 </form>
             </div>
 
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">Ocorrências</h3>
+                <button id="sort-toggle-btn" class="sort-toggle-btn" title="Alternar Ordem">
+                    <i id="sort-asc" class="bi bi-arrow-up"></i>
+                    <i id="sort-desc" class="bi bi-arrow-down active-sort"></i>
+                </button>
+            </div>
+
             <div class="occurrence-list">
                 <div class="card occurrence-card">
                     <div class="card-body">
@@ -200,7 +224,7 @@
                         <div class="occurrence-details">
                             <strong>Status:</strong> <span class="status">Aberto</span> <br>
                             <strong>Categoria:</strong> <span class="category">Equipamentos</span> <br>
-                            <strong>Data de abertura:</strong> 25/08/2025 <br>
+                            <strong>Data de abertura:</strong> <span class="date">25/08/2025</span> <br>
                             <strong>Relatado por:</strong> Leonardo Barbosa
                         </div>
                         <div class="occurrence-id">ID: 0001</div>
@@ -213,7 +237,7 @@
                         <div class="occurrence-details">
                             <strong>Status:</strong> <span class="status">Em análise</span> <br>
                             <strong>Categoria:</strong> <span class="category">Infraestrutura</span> <br>
-                            <strong>Data de abertura:</strong> 22/08/2025 <br>
+                            <strong>Data de abertura:</strong> <span class="date">22/08/2025</span> <br>
                             <strong>Relatado por:</strong> José Herberty
                         </div>    
                         <div class="occurrence-id">ID: 0002</div>
@@ -226,7 +250,7 @@
                         <div class="occurrence-details">
                             <strong>Status:</strong> <span class="status">Resolvido</span> <br>
                             <strong>Categoria:</strong> <span class="category">Patrimônio</span> <br>
-                            <strong>Data de abertura:</strong> 15/08/2025 <br>
+                            <strong>Data de abertura:</strong> <span class="date">15/08/2025</span> <br>
                             <strong>Relatado por:</strong> Felipe Gabriel
                         </div>
                         <div class="occurrence-id">ID: 0003</div>
@@ -239,7 +263,7 @@
                         <div class="occurrence-details">
                             <strong>Status:</strong> <span class="status">Aberto</span> <br>
                             <strong>Categoria:</strong> <span class="category">Eletrônicos</span> <br>
-                            <strong>Data de abertura:</strong> 26/08/2025 <br>
+                            <strong>Data de abertura:</strong> <span class="date">26/08/2025</span> <br>
                             <strong>Relatado por:</strong> Thyago Viana
                         </div>
                         <div class="occurrence-id">ID: 0004</div>
@@ -252,7 +276,7 @@
                         <div class="occurrence-details">
                             <strong>Status:</strong> <span class="status">Resolvido</span> <br>
                             <strong>Categoria:</strong> <span class="category">Eletrônicos</span> <br>
-                            <strong>Data de abertura:</strong> 01/07/2025 <br>
+                            <strong>Data de abertura:</strong> <span class="date">01/07/2025</span> <br>
                             <strong>Relatado por:</strong> Thiago dos Santos
                         </div>
                         <div class="occurrence-id">ID: 0005</div>
@@ -263,6 +287,43 @@
     </div>
 
     <script>
+        const occurrenceList = document.querySelector('.occurrence-list');
+        const sortToggleButton = document.getElementById('sort-toggle-btn');
+        const sortIconAsc = document.getElementById('sort-asc');
+        const sortIconDesc = document.getElementById('sort-desc');
+
+        let currentSortOrder = 'recent';
+
+        function sortCards() {
+            const cards = Array.from(occurrenceList.querySelectorAll('.occurrence-card'));
+
+            cards.sort((a, b) => {
+                const dateA_str = a.querySelector('.date').textContent.trim();
+                const dateB_str = b.querySelector('.date').textContent.trim();
+
+                const [dayA, monthA, yearA] = dateA_str.split('/');
+                const dateA = new Date(+yearA, monthA - 1, +dayA);
+
+                const [dayB, monthB, yearB] = dateB_str.split('/');
+                const dateB = new Date(+yearB, monthB - 1, +dayB);
+
+                if (currentSortOrder === 'recent') {
+                    return dateB - dateA;
+                } else {
+                    return dateA - dateB;
+                }
+            });
+
+            cards.forEach(card => occurrenceList.appendChild(card));
+        }
+
+        sortToggleButton.addEventListener('click', () => {
+            currentSortOrder = (currentSortOrder === 'recent') ? 'oldest' : 'recent';
+            sortIconAsc.classList.toggle('active-sort');
+            sortIconDesc.classList.toggle('active-sort');
+            sortCards();
+        });
+
         document.getElementById('filterForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
 
@@ -282,16 +343,20 @@
                 const searchMatch = searchFilter ? cardText.includes(searchFilter) : true;
 
                 if (statusMatch && categoryMatch && searchMatch) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
         });
 
-        document.querySelectorAll('.occurrence-list .card').forEach(card => {
-            card.addEventListener('click', function() {
-                alert('Redirecionando para a página de detalhes do relato...');
+        document.addEventListener('DOMContentLoaded', () => {
+            sortCards();
+
+            document.querySelectorAll('.occurrence-list .card').forEach(card => {
+                card.addEventListener('click', function() {
+                    alert('Redirecionando para a página de detalhes do relato...');
+                });
             });
         });
     </script>
