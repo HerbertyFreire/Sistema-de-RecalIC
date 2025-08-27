@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus relatos</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons (mantido porque usa o ícone de "Sair") -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  <style>
+    body {
+      min-height: 100vh;
+    }
+    .sidebar {
+      min-width: 300px;
+      background-color: #0094f0;
+      color: white;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      background-color: #6a5acd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      font-weight: bold;
+      margin: 30px auto 10px;
+    }
+
+    /* Conteúdo principal */
+    .content {
+      flex: 1;
+      background: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    /* Link do card */
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    /* Card */
+    .card {
+      background: #000080;
+      border-radius: 30px;
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; 
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+    }
+
+    .icon span {
+      display: block;
+      height: 4px;
+      background: #dcdcdc;
+      border-radius: 2px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .info strong {
+      font-size: 20px;
+    }
+
+    .card-right {
+      margin-left: auto;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+  </style>
+</head>
+<body class="d-flex">
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column p-3">
+
+    <div class="avatar">U</div>
+    <h5 class="text-center">Usuário</h5>
+
+    <div class="d-grid gap-2 mt-3">
+      <button class="btn btn-light" onclick="location.href='meusRelatos.html'">Meus relatos</button>
+      <button class="btn btn-light">Registrar nova ocorrência</button>
+    </div>
+
+    <div class="mt-auto">
+      <button class="btn btn-outline-light w-100"><i class="bi bi-power"></i> Sair</button>
+    </div>
+
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="content">
+    <a href="relato.html" class="card-link">
+      <div class="card">
+        <div class="card-left">
+          <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="info">
+            <strong>Status: Aberto</strong>
+            <span>Categoria: Patrimônio/equipamentos</span>
+            <span>Data de abertura: 01/01/01</span>
+          </div>
+        </div>
+        <div class="card-right">ID: 0001</div>
+      </div>
+    </a>
+
+    <a href="relato.html" class="card-link">
+      <div class="card">
+        <div class="card-left">
+          <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="info">
+            <strong>Status: Em análise</strong>
+            <span>Categoria: Infraestrutura</span>
+            <span>Data de abertura: 01/01/01</span>
+          </div>
+        </div>
+        <div class="card-right">ID: 0002</div>
+      </div>
+    </a>
+
+    <a href="relato.html" class="card-link">
+      <div class="card">
+        <div class="card-left">
+          <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="info">
+            <strong>Status: Resolvido</strong>
+            <span>Categoria: Patrimônio</span>
+            <span>Data de abertura: 01/01/01</span>
+          </div>
+        </div>
+        <div class="card-right">ID: 0003</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>
