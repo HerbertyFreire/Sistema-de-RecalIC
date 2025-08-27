@@ -1,61 +1,14 @@
 <div align="center">
-  <img src="https://logodownload.org/wp-content/uploads/2017/11/ufal-universidade-federal-de-alagoas-logo.png" alt="Logo da UFAL" width="150"/>
 
   # **RecalIC: Sistema de Gestão de Ocorrências**
   
+  ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+ 
 
   > A ponte direta entre a comunidade acadêmica e a solução de problemas no Instituto de Computação da UFAL.
 
 </div>
-## 👨‍💻 Equipe por Trás do Projeto
-<p align="center">Este projeto está sendo desenvolvido com dedicação pelos seguintes membros:</p>
 
-<table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background-color: transparent;">
-  <tr>
-    <td align="center" style="padding: 15px;">
-      <a href="#"> <img src="https://avatars.dicebear.com/api/avataaars/jose.svg" width="100px;" alt="Foto de José Herberty"/>
-        <br />
-        <sub><b>José Herberty de Oliveira Freire</b></sub>
-      </a>
-      <br />
-      <sub>Ciência da Computação</sub>
-    </td>
-    <td align="center" style="padding: 15px;">
-      <a href="#"> <img src="https://avatars.dicebear.com/api/avataaars/leonardo.svg" width="100px;" alt="Foto de Leonardo Barbosa"/>
-        <br />
-        <sub><b>Leonardo Barbosa Barros</b></sub>
-      </a>
-      <br />
-      <sub>Ciência da Computação</sub>
-    </td>
-    <td align="center" style="padding: 15px;">
-      <a href="#"> <img src="https://avatars.dicebear.com/api/avataaars/felipe.svg" width="100px;" alt="Foto de Felipe Gabriel"/>
-        <br />
-        <sub><b>Felipe Gabriel Marques dos Santos</b></sub>
-      </a>
-      <br />
-      <sub>Ciência da Computação</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="padding: 15px;">
-      <a href="#"> <img src="https://avatars.dicebear.com/api/avataaars/thyago.svg" width="100px;" alt="Foto de Thyago Viana"/>
-        <br />
-        <sub><b>Thyago Viana Pereira</b></sub>
-      </a>
-      <br />
-      <sub>Ciência da Computação</sub>
-    </td>
-    <td align="center" style="padding: 15px;">
-      <a href="#"> <img src="https://avatars.dicebear.com/api/avataaars/thiago.svg" width="100px;" alt="Foto de Thiago Pontes"/>
-        <br />
-        <sub><b>Thiago dos Santos Pontes</b></sub>
-      </a>
-      <br />
-      <sub>Ciência da Computação</sub>
-    </td>
-  </tr>
-</table>
 ## 🎯 Qual o objetivo?
 
 O **RecalIC** é uma plataforma web criada para simplificar a forma como problemas de infraestrutura (como uma cadeira quebrada, uma lâmpada queimada ou um problema no ar-condicionado) são reportados e resolvidos.
@@ -84,6 +37,17 @@ O **RecalIC** é uma plataforma web criada para simplificar a forma como problem
 | **Painel Centralizado** | Visualize e gerencie todas as ocorrências registradas em uma única tela. | 🎛️ |
 | **Filtros Inteligentes**| Encontre relatos por status, local, categoria ou data com facilidade. | 🔎 |
 | **Gestão de Status** | Atualize o andamento, adicione comentários e mantenha o relator sempre informado. | 🔄 |
+
+---
+
+## 👨‍💻 Equipe por Trás do Projeto
+<p align="center">Este projeto está sendo desenvolvido com dedicação pelos seguintes membros:</p>
+
+- **[José Herberty de Oliveira Freire](https://github.com/HerbertyFreire)** - *Estudante de Ciência da Computação*
+- **[Leonardo Barbosa Barros](https://github.com/leonardobrrs)** - *Estudante de Ciência da Computação*
+- **[Felipe Gabriel Marques dos Santos](https://github.com/22felipe)** - *Estudante de Ciência da Computação*
+- **[Thyago Viana Pereira](https://github.com/thyagoviana)** - *Estudante de Ciência da Computação*
+- **Thiago dos Santos Pontes** - *Estudante de Ciência da Computação*
 
 ---
 
