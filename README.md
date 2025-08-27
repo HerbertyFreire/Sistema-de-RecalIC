@@ -3,7 +3,7 @@
   # **RecalIC: Sistema de Gestão de Ocorrências**
   
   ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-  ![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)
+ 
 
   > A ponte direta entre a comunidade acadêmica e a solução de problemas no Instituto de Computação da UFAL.
 
@@ -52,5 +52,5 @@ O **RecalIC** é uma plataforma web criada para simplificar a forma como problem
 ---
 
 <div align="center">
-  <p>Feito com ❤️ para a comunidade do <strong>Instituto de Computação</strong>.</p>
+  <p>Feito para a comunidade do <strong>Instituto de Computação</strong>.</p>
 </div>
