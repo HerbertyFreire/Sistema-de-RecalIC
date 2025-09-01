@@ -28,6 +28,7 @@ O **RecalIC** é uma plataforma web criada para simplificar a forma como problem
 | **Evidências Visuais** | Anexe fotos do problema para facilitar a identificação e o conserto. | 📸 |
 | **Acompanhamento Real** | Veja o status da sua solicitação (Aberto, Em Análise, Resolvido) em tempo real. | 📊 |
 
+
 <br>
 
 ### 🛠️ **Para a Gestão (Administradores e Técnicos)**
