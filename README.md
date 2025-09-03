@@ -1,9 +1,10 @@
 <div align="center">
+  <img src="https://i.imgur.com/your-image-link-here.png" alt="RecalIC Logo" width="300"/>
 
   # **RecalIC: Sistema de Gestão de Ocorrências**
   
   ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
- 
+  
 
   > A ponte direta entre a comunidade acadêmica e a solução de problemas no Instituto de Computação da UFAL.
 
@@ -48,7 +49,7 @@ O **RecalIC** é uma plataforma web criada para simplificar a forma como problem
 - **[Leonardo Barbosa Barros](https://github.com/leonardobrrs)** - *Estudante de Ciência da Computação*
 - **[Felipe Gabriel Marques dos Santos](https://github.com/22felipe)** - *Estudante de Ciência da Computação*
 - **[Thyago Viana Pereira](https://github.com/thyagoviana)** - *Estudante de Ciência da Computação*
-- **[Thiago dos Santos Pontes](https://github.com/thiagodsp-max)** - *Estudante de Ciência da Computação*
+- **[Thiago dos Santos Pontes](https://github.com/thiagodsp-max)** - *Estudante de Computação*
 
 ---
 
