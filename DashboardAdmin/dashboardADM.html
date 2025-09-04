@@ -208,7 +208,7 @@
 
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3 class="mb-0">Ocorrências</h3>
-                <button id="sort-toggle-btn" class="sort-toggle-btn" title="Alternar Ordem">
+                <button id="sort-toggle-btn" class="sort-toggle-btn" title="Alternar Ordem por Data">
                     <i id="sort-asc" class="bi bi-arrow-up"></i>
                     <i id="sort-desc" class="bi bi-arrow-down active-sort"></i>
                 </button>
@@ -300,7 +300,7 @@
             const sortIconAsc = document.getElementById('sort-asc');
             const sortIconDesc = document.getElementById('sort-desc');
 
-            let currentSortOrder = 'recent';
+            let currentSortOrder = 'recent'; 
 
             function sortCards() {
                 const cards = Array.from(occurrenceList.querySelectorAll('a'));
@@ -318,17 +318,21 @@
                     if (currentSortOrder === 'recent') {
                         return dateB - dateA;
                     } else {
-                        return dateA - b;
+                        return dateA - dateB;
                     }
                 });
+
 
                 cards.forEach(card => occurrenceList.appendChild(card));
             }
 
             sortToggleButton.addEventListener('click', () => {
+
                 currentSortOrder = (currentSortOrder === 'recent') ? 'oldest' : 'recent';
+                
                 sortIconAsc.classList.toggle('active-sort');
                 sortIconDesc.classList.toggle('active-sort');
+                
                 sortCards();
             });
 
@@ -359,7 +363,6 @@
                 });
             });
 
-            // LÓGICA PARA TORNAR OS CARDS CLICÁVEIS
             const clickableCards = document.querySelectorAll('.occurrence-card');
             clickableCards.forEach(card => {
                 card.addEventListener('click', function(event) {
@@ -367,7 +370,6 @@
                     window.location.href = this.closest('a').href;
                 });
             });
-            sortCards();
         });
     </script>
 </body>
