@@ -3,68 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Geração de Ocorrências</title>
+    <title>Detalhes dos Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card col-md-6">
-        <div class="card-header text-center bg-black text-white">
-            <h5 class="card-title fs-2">REGISTRO DE OCORRÊNCIAS</h5>
+<body>
+    <style>
+        .foto-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="container-fluid bg-primary text-center mb-4">
+        <h2>DETALHES DO RELATO</h2>
+    </div>
+    
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header fw-bold">Status Atual:</div>
+            <div class="card-body bg-dark-subtle">
+                <form id="statuses">
+                    <!--ROW DOS INPUTS-->
+                    <div class="row">
+                        <div class="col text-center"> <!--INPUTS-->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="form-label">Localização</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="form-label">Categoria</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="form-label">Código do Patrimônio</label>
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="form-label">Descrição Detalhada</label>
+                                </div>
+                                <div class="col">
+                                    <textarea class="form-control" placeholder="" rows="3" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col"> <!--FOTOS-->
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="foto-box">FOTO</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="foto-box">FOTO</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="foto-box">FOTO</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="foto-box">FOTO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--ROW DOS BOTOES-->
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-between text-center">
+                            <button type="button" class="btn btn-light btn-outline-dark">
+                                Exibir Histórico
+                            </button>
+                            <button class="btn btn-danger btn-outline-dark" type="submit">
+                                Excluir Ocorrência
+                            </button>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <button type="button" class="btn btn-light btn-outline-dark">
+                                Voltar
+                            </button>
+                        </div>
+                    </div>      
+                </form>
+            </div>
         </div>
-        <div class="card-body bg-dark-subtle">
-            <form id="ocorrenciaForm">
-                <div class="row mb-3">
-                    <div class="col">
-                        <label class="form-label">Local</label>
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="" required>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label class="form-label">Categoria</label>
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="" required>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label class="form-label">Codigo</label>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" placeholder="" required>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label class="form-label">Descrição</label>
-                    </div>
-                    <div class="col">
-                        <textarea class="form-control" placeholder="" rows="3" required></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-light">
-                            <i class="bi bi-camera"></i> Anexar Fotos
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-danger" type="submit">
-                            Registrar ocorrência
-                        </button>
-                    </div>
-                </div>
-            </form>
+        
+        <div class="card">
+            <div class="card-header">Ações Administrativas</div>
+            <div class="card-body bg-dark-subtle">
+                <form id="adicionar">
+                    
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Adicionar Status</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Adicionar Comentário</label>
+                            </div>
+                            <div class="col">
+                                <textarea class="form-control" placeholder="" rows="2" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col"></div>
+                            <div class="col d-flex justify-content-center">
+                                <button class="btn btn-danger" type="submit">
+                                    Salvar Alterações
+                                </button>
+                            </div>
+                        </div>       
+                </form>
+            </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('ocorrenciaForm').addEventListener('submit', function(event) {
+        document.getElementById('statuses').addEventListener('submit', function(event) {
             event.preventDefault();
             
                 alert('REGISTRO CRIADO COM ÊXITO!!');
@@ -75,4 +151,5 @@
         });
     </script>
 </body>
+
 </html>
